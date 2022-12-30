@@ -75,6 +75,7 @@ def creat_group():
         teacher = Teacher.query.filter(Teacher.user_id == teacher).first()
         teacher.group.append(add)
         db.session.commit()
+        print("User")
         return redirect(url_for("creat_group"))
     student = Users.query.filter(Users.student != None).order_by(Users.id).all()
     teacher = Users.query.filter(Users.teacher != None).order_by(Users.id).all()
